@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            
+            
+            <div class="col-lg-10 align-self-end">
+                <h1 class="text-uppercase text-white font-weight-bold mt-5 mb-5">¿Cómo Ayudar?</h1>
+                <hr class="divider my-4 mt-5 mb-5" />
+            </div>
+            <div class="col-lg-8 align-self-baseline"> 
+                <a class="btn btn-primary btn-xl js-scroll-trigger mb-2 mt-5" href="{{ url_for('planos') }}">Fabricando</a>
+                <h4 class="text-white-75 font-weight-light mb-5 mt-5">Puedes ver lo que necesita el hospital más cercano a ti, mira nuestro listado de tutoriales probados para poder fabricar los insumos que se necesiten</h4>
+
+            </div>
+            <div class="col-lg-8 align-self-baseline"> 
+                <a class="btn btn-primary btn-xl js-scroll-trigger mb-2 mt-5" href="{{ url_for('donacion') }}">Donación Monetaria</a>
+                <h4 class="text-white-75 font-weight-light mb-5 mt-5">Para apoyar este proyecto y para costear a las personas que pongan su capacidad de producción (Costos de Materiales, etc) * Este proyecto es sin fines de lucro, todo funciona en base a voluntariado.</h4>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
