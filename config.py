@@ -1,1 +1,0 @@
-SECRET_KEY = '[+6LjI]aphSD_kY'
