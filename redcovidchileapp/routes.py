@@ -22,7 +22,8 @@ def planos():
 
 @app.route('/hospitales')
 def hospitales():
-    return render_template('hospitales.html', title='Hospitales')
+    hospitals = Hospital.query.all()
+    return render_template('hospitales.html', title='Hospitales', hospitales = hospitals)
 
 # Admin routes
 @app.route('/admin', methods=['GET', 'POST'])
@@ -34,7 +35,6 @@ def admin():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-        #if form.email.data == 'admin@redcovidchile.cl' and form.password.data == '123456':
             return redirect(url_for('inputs'))
         else:
             flash('No se pudo acceder. Por favor revisa tu email o contrasena.', 'danger')
@@ -59,4 +59,5 @@ def inputs():
 # Home
 @app.route('/')
 def index():
-    return render_template('home.html', title='Home')
+    hospitals = Hospital.query.all()
+    return render_template('home.html', title='Home', hospitales=hospitals)

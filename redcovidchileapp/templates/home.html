@@ -14,34 +14,26 @@
                     <h2 class="text-white-75 font-weight-light mb-5 mt-5">Conoce lo que están Necesitando los Hospitales en Chile para Enfrentar la Pandemia Covid-19</h2>
             </div>
         
-        <table class="table">
+            <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">Hospital</th>
                     <th scope="col">Necesita</th>
+                    <th scope="col">Detalles</th>
                     <th scope="col">Contacto</th>
-                    <th scope="col">Dirección</th>
                 </tr>
                 </thead>
                 <tbody>
+                  {% if hospitales %}
+                    {% for hospital in hospitales %}
                   <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td>{{ hospital.hospitalname }}</td>
+                    <td>{{ hospital.necesita }}</td>
+                    <td>{{ hospital.detalles }}</td>
+                    <td>{{ hospital.contacto }}</td>
                 </tr>
-                  <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@mdo</td>
-                </tr>
-                  <tr>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@mdo</td>
-                </tr>
+                    {% endfor %}
+                  {% endif %}
                 </tbody>
               </table>
             </div>
